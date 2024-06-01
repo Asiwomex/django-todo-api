@@ -7,7 +7,7 @@ CI/CD of a django todo api using github actions only
 3. http://localhost:8000
 
 ## **Requirements:**
-
+the following are required 
 - Existing GitHub repository for your Todo API project.
 - An AWS account with an EC2 instance configured for Docker and running a container orchestration tool like Docker Engine or ECS.
 - Docker installed and configured on your EC2 instance.
