@@ -1,37 +1,52 @@
 
-# CI-CD-todo-api
-CI/CD of a django todo api using github actions only 
+# This is a simple Django todo app
 
-1. dockerize the app first, have a dockerized todo-app
-2. docker run -it -p 8000:8000 asiwomex/todo_api:latest
-3. http://localhost:8000
+This README provides instructions on setting up and running your Django Todo app locally.
 
-## **Requirements:**
-the following are required 
-- Existing GitHub repository for your Todo API project.
-- An AWS account with an EC2 instance configured for Docker and running a container orchestration tool like Docker Engine or ECS.
-- Docker installed and configured on your EC2 instance.
-- An SSH key pair created for accessing your EC2 instance securely. Download the private key and keep it secure (**never** commit it to your repository).
+**Prerequisites:**
 
-In your GitHub repository, navigate to Settings > Secrets and variables > Actions and add the 
-following secrets:
-1. DOCKER_HUB_USERNAME: Your Docker Hub username.
-2. DOCKER_HUB_PASSWORD: Your Docker Hub password.
-3. AWS_ACCESS_KEY_ID: Your AWS access key ID.
-4. AWS_SECRET_ACCESS_KEY: Your AWS secret access key.
-5. EC2_SSH_PRIVATE_KEY: The private SSH key to access your EC2 instance.
-6. EC2_PUBLIC_IP: The public IP address of your EC2 instance.
-7. EC2_USERNAME: The username to access your EC2 instance (usually ec2-user for 
-Amazon Linux)
+* Python 3 (Download from [https://www.python.org/downloads/](https://www.python.org/downloads/))
+* pip (Installed with Python 3)
 
-## Make necessary changes to the main.yaml file, in areas relating to your dockerhub username and app name
+**Installation:**
 
-1. Push Changes to GitHub: Commit and push your changes to the main branch of your 
-GitHub repository.
-2. GitHub Actions: GitHub Actions will automatically build the Docker image, push it to 
-Docker Hub, and deploy it to your EC2 instance.
-3. Check the Running Containers: Connect to your EC2 instance and verify that the Docker 
-container is running:
-`docker ps`
-4. Access the Django API: Open your web browser and navigate to 
-http://<EC2_PUBLIC_IP>:8000 to access your Django API.
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://<your_github_repo_url>.git
+   ```
+
+2. **Create a virtual environment (recommended):**
+
+   ```bash
+   python -m venv venv  # or virtualenv venv
+   source venv/bin/activate  # or . venv/bin/activate (Windows)
+   ```
+
+3. **Install dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## **Running the App:**
+1. **Run migrations (Optional):**
+
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+
+2. **Start the development server:**
+
+   ```bash
+   python manage.py runserver
+   ```
+
+   This will typically launch the server on `http://localhost:8000`.
+
+3. **Access the application:**
+
+   Open your web browser and navigate to `http://localhost:8000` to see your Django Todo app running.
+
+
