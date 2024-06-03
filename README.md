@@ -2,6 +2,7 @@
 # This is a simple Django todo app
 
 This README provides instructions on setting up and running your Django Todo app locally.
+<img width="538" alt="todoapi" src="https://github.com/Asiwomex/django-todo-api/assets/118656806/4ad95b17-2199-4b32-9f7c-d8c336c6e8ee">
 
 **Prerequisites:**
 
